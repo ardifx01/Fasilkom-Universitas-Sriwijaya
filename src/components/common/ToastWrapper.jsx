@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify"; 
-import { ThemeContext } from "../../context/ThemeContext"; 
 
 /**
  * ToastWrapper component
@@ -10,14 +9,6 @@ import { ThemeContext } from "../../context/ThemeContext";
  */
 
 const ToastWrapper = () => {
-  // Accesses the current theme from the ThemeContext
-  const { theme } = useContext(ThemeContext);
-
-  // Effect hook to dismiss all active toasts whenever the theme changes.
-  // This ensures toasts align with the new theme without lingering.
-  useEffect(() => {
-    toast.dismiss();
-  }, [theme]); // Dependency array: runs effect when 'theme' changes
 
   return (
     // ToastContainer component configures the behavior and appearance of all toasts
@@ -31,7 +22,7 @@ const ToastWrapper = () => {
       pauseOnFocusLoss // Pauses the autoClose timer when the window loses focus
       draggable // Allows toasts to be dragged
       pauseOnHover // Pauses the autoClose timer when the mouse hovers over the toast
-      theme={theme} // Applies the current application theme to the toasts
+      theme="light" 
     />
   );
 }

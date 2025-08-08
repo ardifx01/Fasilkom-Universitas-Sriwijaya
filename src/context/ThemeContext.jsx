@@ -3,15 +3,7 @@ import React, { createContext, useState, useEffect } from "react";
 // Create Context: This creates a Context object.
 export const ThemeContext = createContext();
 
-/**
- * ThemeProvider component
- * This component provides the theme context to its children.
- * It manages the current theme state (dark/light) and persists it to localStorage.
- */
-
 const ThemeProvider = ({ children }) => {
-  // useState hook to manage the current theme.
-  // It initializes the theme from localStorage, defaulting to "dark" if not found.
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") || "dark";
   });
