@@ -1,5 +1,7 @@
 // This data is use when the service is offline
 
+//  Untuk Rama, BackEnd cukup buat tabel Berita, KemahasiswaanKerjasama, Vacancies, Scholarship, Achievements aja. pastiin struktur tabel, urutan data, isinya sama persis dengan data disini, jangan typo biar sesuai. kecuali nilai value "cover" sesuain di lokasi backend.
+
 // Berita
 const Berita = [
   {
