@@ -255,21 +255,25 @@ const AcademicService = [
     id: 1,
     judul: "Academic Timetable",
     cover: "/assets/unsri-bg.jpg",
+    postedBy: "webmaster in Academic Service",
   },
   {
     id: 2,
     judul: "Panduan Akademik",
     cover: "/assets/unsri-bg.jpg",
+    postedBy: "webmaster in Academic Service",
   },
   {
     id: 3,
     judul: "SK Tata Tertib Fakultas Ilmu Komputer",
     cover: "/assets/unsri-bg.jpg",
+    postedBy: "Nisa in Kemahasiswaan & Kerjasama, News & Information, Student",
   },
   {
     id: 4,
     judul: "Mahasiswa Aktif Ganjil T.A 2021/2022",
     cover: "/assets/unsri-bg.jpg",
+    postedBy: "webmaster in Stats",
   },
 ];
 
