@@ -77,7 +77,7 @@ const Berita = [
 ];
 
 // Kemahasiswaan dan Kerjasama
-const Kemahasiswaan = [
+const KemahasiswaanKerjasama = [
   {
     id: 1,
     judul:
@@ -87,22 +87,22 @@ const Kemahasiswaan = [
   },
   {
     id: 2,
-    judul:
-      "Registrasi Acara Pelepasan Alumni Fakultas Ilmu Komputer Universitas Sriwijaya ke-74",
+    judul: "Pendaftaran Mahasiswa Baru S3 Doktor Fasilkom UNSRI 2024",
     cover: "/assets/Kemahasiswaan/kemahasiswaan-2.jpeg",
     postedBy: "admin web in Kemahasiswaan & Kerjasama",
   },
   {
-    id: 1,
-    judul: "Pendaftaran Mahasiswa Baru S3 Doktor Fasilkom UNSRI 2024",
+    id: 3,
+    judul: "Secangkir Teh Bersama Ketua Jurusan Teknik Informatika",
     cover: "/assets/Kemahasiswaan/kemahasiswaan-3.jpg",
-    postedBy: "admin web in Kemahasiswaan & Kerjasama",
+    postedBy: "admin web in News & Information, Kemahasiswaan & Kerjasama",
   },
   {
-    id: 1,
-    judul: "Secangkir Teh Bersama Ketua Jurusan Teknik Informatika",
+    id: 4,
+    judul:
+      "Registrasi Acara Pelepasan Alumni Fakultas Ilmu Komputer Universitas Sriwijaya ke-74",
     cover: "/assets/Kemahasiswaan/kemahasiswaan-4.jpg",
-    postedBy: "admin web in News & Information, Kemahasiswaan & Kerjasama",
+    postedBy: "admin web in Kemahasiswaan & Kerjasama",
   },
 ];
 
@@ -209,4 +209,11 @@ function getDay(dateStr) {
   };
 }
 
-export { Berita, Kemahasiswaan, Vacansies, Scholarship, Achievements, getDay };
+export {
+  Berita,
+  KemahasiswaanKerjasama,
+  Vacansies,
+  Scholarship,
+  Achievements,
+  getDay,
+};
