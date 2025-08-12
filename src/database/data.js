@@ -210,7 +210,7 @@ const OrmawaLogo = [
   {
     id: 3,
     judul: "HMIF",
-    cover: "/assets/logoOrmawa/ormawa-1.png",
+    cover: "/assets/logoOrmawa/ormawa-3.png",
   },
   {
     id: 4,
