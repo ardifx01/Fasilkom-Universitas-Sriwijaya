@@ -59,7 +59,7 @@ const Berita = [
     tanggal: "",
     cover: "/assets/Berita/berita-6.jpeg",
     content:
-      "Pengisian Kartu Studi Mahasiswa lama: 4 - 8 Agustus 2025 Pengisian Kartu Studi Mahasiswa baru: 15- 18 Agustus 2025 Pengisian Kartu Perubahan Studi Mahasiswa: 18 -22 Agustus 2025",
+      "Pengisian Kartu Studi Mahasiswa lama: 4 - 8 Agustus 2025\nPengisian Kartu Studi Mahasiswa baru: 15- 18 Agustus 2025\nPengisian Kartu Perubahan Studi Mahasiswa: 18 -22 Agustus 2025",
     isPriority: false,
     postedBy: "Kemahasiswaaan & Kerjasama, News & Information",
   },
