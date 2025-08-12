@@ -106,33 +106,33 @@ const KemahasiswaanKerjasama = [
   },
 ];
 
-// Vacansies
-const Vacansies = [
+// Vacancies
+const Vacancies = [
   {
     id: 1,
-    judul: "CDC UNSRI berkolaborasi dengan TUGU INSURANCE",
-    cover: "/assets/Vacansies/vacansies-1.jpg",
-    postedBy: "admin web in News & Information, Vacansies",
+    judul:
+      "Tes Wawancara Penerimaan Dosen Luar Biasa Fakultas Ilmu Komputer Tahun Ajaran Ganjil 2024-2025",
+    cover: "/assets/Vacancies/vacancies-1.jpg",
+    postedBy: "admin web in News & Information, Vacancies",
   },
   {
     id: 2,
-    judul:
-      "Tes Wawancara Penerimaan Dosen Luar Biasa Fakultas Ilmu Komputer Tahun Ajaran Ganjil 2024-2025",
-    cover: "/assets/Vacansies/vacansies-2.png",
-    postedBy: "admin web in News & Information, Vacansies",
+    judul: "CDC UNSRI berkolaborasi dengan TUGU INSURANCE",
+    cover: "/assets/Vacancies/vacancies-2.png",
+    postedBy: "admin web in News & Information, Vacancies",
   },
   {
     id: 3,
     judul: "Recruitmen ASN Fakultas Ilmu Komputer Universitas Sriwijaya 2024",
-    cover: "/assets/Vacansies/vacansies-3.png",
-    postedBy: "admin web in News & Information, Vacansies",
+    cover: "/assets/Vacancies/vacancies-3.png",
+    postedBy: "admin web in News & Information, Vacancies",
   },
   {
     id: 4,
     judul:
       "PT. JASA RAHARJA membuka kesempatan bagi putra putri Indonesia untuk menjadi Pegawai PT. Jasa Raharja",
-    cover: "/assets/Vacansies/vacansies-4.png",
-    postedBy: "admin web in News & Information, Vacansies",
+    cover: "/assets/Vacancies/vacancies-4.png",
+    postedBy: "admin web in News & Information, Vacancies",
   },
 ];
 
@@ -168,26 +168,27 @@ const Scholarship = [
 const Achievements = [
   {
     id: 1,
-    judul: "",
-    cover: "/assets/Achievement/achievement-1.png",
+    judul: "Piagam Penghargaan Kekayaan Intelektual",
+    cover: "/assets/Achievement/acv-1.png",
     postedBy: "admin web in Kemahasiswaan & Kerjasama, Slider",
   },
   {
     id: 2,
-    judul: "",
-    cover: "/assets/Achievement/achievement-2.png",
+    judul:
+      "Mahasiswa Fasilkom Unsri Meraih Juara Pertama di Hackathon COMPFEST 8 Universitas Indonesia 2016",
+    cover: "/assets/Achievement/acv-2.png",
     postedBy: "admin web in Kemahasiswaan & Kerjasama, Slider",
   },
   {
     id: 3,
-    judul: "",
-    cover: "/assets/Achievement/achievement-3.png",
+    judul: "Juara Favorit Desain Logo se-Asean",
+    cover: "/assets/Achievement/acv-3.png",
     postedBy: "admin web in Kemahasiswaan & Kerjasama, Slider",
   },
   {
     id: 4,
-    judul: "",
-    cover: "/assets/Achievement/achievement-4.png",
+    judul: "Juara Favorit Desain Logo se-Asean",
+    cover: "/assets/Achievement/acv-4.png",
     postedBy: "admin web in News & Information, Scholarship, Slider",
   },
 ];
@@ -212,7 +213,7 @@ function getDay(dateStr) {
 export {
   Berita,
   KemahasiswaanKerjasama,
-  Vacansies,
+  Vacancies,
   Scholarship,
   Achievements,
   getDay,
