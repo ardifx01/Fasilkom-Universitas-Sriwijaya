@@ -1,0 +1,27 @@
+import { KemahasiswaanKerjasama } from "@/database/data";
+import KemahasiswaanCard from "./KemahasiswaanCard";
+const Kemahasiswaan = () => {
+  return (
+    <section className="pt-6 pb-4 px-6 xl:px-16">
+      <div className="border-b-4 md:border-b-0 pb-4">
+        {/* Tittle */}
+        <div className="flex justify-between">
+          <h2 className="bg-[#FFCC00] py-0.5 px-2">
+            Kemahasiswaan & Kerjasama
+          </h2>
+          <a className="font-semibold hover:text-[#FFCC00] transition-all duration-300 cursor-pointer">
+            More
+          </a>
+        </div>
+        {/* Content */}
+        <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {KemahasiswaanKerjasama.map((berita) => (
+            <KemahasiswaanCard berita={berita} key={berita.id} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Kemahasiswaan;

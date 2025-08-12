@@ -261,3 +261,8 @@ html {
     transform: translateX(100%);
   }
 }
+
+/* Pre-line */
+.content {
+  white-space: pre-line;
+}

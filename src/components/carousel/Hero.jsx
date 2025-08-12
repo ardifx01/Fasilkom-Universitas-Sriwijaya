@@ -36,7 +36,7 @@ const Hero = () => {
               Timeline
             </h1>
             <Carousel setApi={setApi} opts={{ loop: true }}>
-              <div className="relative">
+              <div className="relative cursor-pointer">
                 <CarouselContent>
                   {beritaUtama.map((berita) => (
                     <CarouselItem key={berita.id}>

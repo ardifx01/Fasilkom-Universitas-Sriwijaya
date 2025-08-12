@@ -1,11 +1,21 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/carousel/Hero";
+import News from "@/components/berita/News";
+import Kemahasiswaan from "@/components/kemahasiswaan/Kemahasiswaan";
+import SectionLayout from "@/components/section/SectionLayout";
+import AcademicLayout from "@/components/academics/AcademicLayout";
+import Footer from "@/components/Footer";
 const Home = () => {
   return (
-    <section className="h-[200vh]">
+    <>
       <Navbar />
       <Hero />
-    </section>
+      <News />
+      <Kemahasiswaan />
+      <SectionLayout />
+      <AcademicLayout />
+      <Footer />
+    </>
   );
 };
 
