@@ -195,6 +195,84 @@ const Achievements = [
   },
 ];
 
+// Ormawa
+const OrmawaLogo = [
+  {
+    id: 1,
+    judul: "BEM KM FASILKOM",
+    cover: "/assets/logoOrmawa/ormawa-1.png",
+  },
+  {
+    id: 2,
+    judul: "DPM",
+    cover: "/assets/logoOrmawa/ormawa-2.png",
+  },
+  {
+    id: 3,
+    judul: "HMIF",
+    cover: "/assets/logoOrmawa/ormawa-1.png",
+  },
+  {
+    id: 4,
+    judul: "HIMASISKO",
+    cover: "/assets/logoOrmawa/ormawa-4.png",
+  },
+  {
+    id: 5,
+    judul: "HIMSI",
+    cover: "/assets/logoOrmawa/ormawa-5.png",
+  },
+  {
+    id: 6,
+    judul: "HIMDIKO",
+    cover: "/assets/logoOrmawa/ormawa-6.png",
+  },
+  {
+    id: 7,
+    judul: "LDF WIFI",
+    cover: "/assets/logoOrmawa/ormawa-7.png",
+  },
+  {
+    id: 8,
+    judul: "FASCO",
+    cover: "/assets/logoOrmawa/ormawa-8.png",
+  },
+  {
+    id: 9,
+    judul: "INTEL",
+    cover: "/assets/logoOrmawa/ormawa-9.png",
+  },
+  {
+    id: 10,
+    judul: "INTEL",
+    cover: "/assets/logoOrmawa/ormawa-10.png",
+  },
+];
+
+// AcademicService
+const AcademicService = [
+  {
+    id: 1,
+    judul: "Academic Timetable",
+    cover: "/assets/unsri-bg.jpg",
+  },
+  {
+    id: 2,
+    judul: "Panduan Akademik",
+    cover: "/assets/unsri-bg.jpg",
+  },
+  {
+    id: 3,
+    judul: "SK Tata Tertib Fakultas Ilmu Komputer",
+    cover: "/assets/unsri-bg.jpg",
+  },
+  {
+    id: 4,
+    judul: "Mahasiswa Aktif Ganjil T.A 2021/2022",
+    cover: "/assets/unsri-bg.jpg",
+  },
+];
+
 function getDay(dateStr) {
   // Pecah tanggal menjadi [dd, mm, yyyy]
   const [day, month, year] = dateStr.split("-").map(Number);
@@ -218,5 +296,7 @@ export {
   Vacancies,
   Scholarship,
   Achievements,
+  OrmawaLogo,
+  AcademicService,
   getDay,
 };
