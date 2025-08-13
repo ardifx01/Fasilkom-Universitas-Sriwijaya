@@ -1,7 +1,7 @@
 import { OrmawaLogo } from "@/database/data";
 const Ormawa = () => {
   return (
-    <section className="pb-6 px-6 xl:px-16 lg:pt-8 xl:bg-[url('/assets/background.png')] xl:bg-cover">
+    <section className="pb-6 px-9 xl:px-16 lg:pt-8 xl:bg-[url('/assets/background.png')] xl:bg-cover">
       {/* Tittle */}
       <h2 className="text-[#FFCC00] font-medium bg-[#3D3D3D] w-max py-2 px-4 sm:text-lg md:text-xl lg:text-3xl 2xl:text-4xl">
         Social Media ORMAWA Fasilkom

@@ -1,7 +1,5 @@
 // This data is use when the service is offline
 
-//  Untuk Rama, BackEnd cukup buat tabel Berita, KemahasiswaanKerjasama, Vacancies, Scholarship, Achievements aja. pastiin struktur tabel, urutan data, isinya sama persis dengan data disini, jangan typo biar sesuai. kecuali nilai value "cover" sesuain di lokasi backend.
-
 // Berita
 const Berita = [
   {
@@ -195,6 +193,19 @@ const Achievements = [
   },
 ];
 
+// More About Fasilkom
+const MoreAboutFasilkom = [
+  "Upcoming Events",
+  "Akademik & Penelitian",
+  "Graduate & Alumni Profile",
+  "Distinguished Lecture Series",
+  "Student Services",
+  "Student Achievements",
+  "Student Statistic",
+  "Administration",
+  "ICT Services",
+];
+
 // Ormawa
 const OrmawaLogo = [
   {
@@ -277,22 +288,50 @@ const AcademicService = [
   },
 ];
 
+// Program Studi
+const ProgramStudi = [
+  {
+    kategori: "Program Sarjana",
+    prodi: ["Sistem Komputer", "Teknik Informatika", "Sistem Informasi"],
+  },
+  {
+    kategori: "Diploma Komputer",
+    prodi: ["Teknik Komputer", "Manajemen Informatika", "Komputer Akuntansi"],
+  },
+  {
+    kategori: "Program Pascasarjana",
+    prodi: ["Doktor Ilmu Komputer", "Magister Ilmu Komputer"],
+  },
+];
+
+// Old
 function getDay(dateStr) {
-  // Pecah tanggal menjadi [dd, mm, yyyy]
   const [day, month, year] = dateStr.split("-").map(Number);
 
-  // Buat objek Date JavaScript
   const dateObj = new Date(year, month - 1, day);
 
-  // Array untuk singkatan hari
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  // Ambil singkatan hari dan tanggal (dua digit)
   return {
     day: days[dateObj.getDay()],
     date: String(day).padStart(2, "0"),
   };
 }
+
+// getDay Function for MySQL
+// function getDay(dateStr) {
+//   const [year, month, day] = dateStr.split("-").map(Number);
+
+//   const dateObj = new Date(year, month - 1, day);
+
+//   // Array untuk singkatan hari
+//   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+//   return {
+//     day: days[dateObj.getDay()],
+//     date: String(day).padStart(2, "0"),
+//   };
+// }
 
 export {
   Berita,
@@ -300,7 +339,9 @@ export {
   Vacancies,
   Scholarship,
   Achievements,
+  MoreAboutFasilkom,
   OrmawaLogo,
   AcademicService,
+  ProgramStudi,
   getDay,
 };

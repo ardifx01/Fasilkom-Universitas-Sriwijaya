@@ -1,10 +1,11 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/carousel/Hero";
-import News from "@/components/berita/News";
-import Kemahasiswaan from "@/components/kemahasiswaan/Kemahasiswaan";
-import SectionLayout from "@/components/section/SectionLayout";
-import AcademicLayout from "@/components/academics/AcademicLayout";
+import Hero from "@/components/home/carousel/Hero";
+import News from "@/components/home/berita/News";
+import Kemahasiswaan from "@/components/home/kemahasiswaan/Kemahasiswaan";
+import SectionLayout from "@/components/home/section/SectionLayout";
+import AcademicLayout from "@/components/home/academics/AcademicLayout";
 import Footer from "@/components/Footer";
+
 const Home = () => {
   return (
     <>

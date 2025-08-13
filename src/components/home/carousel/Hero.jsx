@@ -6,13 +6,20 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
-import { Berita, getDay } from "@/database/data";
+import { Berita as beritaLocalData, getDay } from "@/database/data";
 import CarouselCard from "./CarouselCard";
 
 const Hero = () => {
+  const beritaUtama = beritaLocalData
+    .filter((beritaData) => beritaData.isPriority)
+    .slice(0, 3);
   const [api, setApi] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [slidesCount, setSlidesCount] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  // Auto-play interval
+  const AUTOPLAY_INTERVAL = 5000;
 
   useEffect(() => {
     if (!api) return;
@@ -24,7 +31,41 @@ const Hero = () => {
     });
   }, [api]);
 
-  const beritaUtama = Berita.filter((berita) => berita.isPriority).slice(0, 3);
+  // Auto-play effect
+  useEffect(() => {
+    if (!api || !isAutoPlaying) return;
+
+    const interval = setInterval(() => {
+      if (selectedIndex === slidesCount - 1) {
+        api.scrollTo(0);
+      } else {
+        api.scrollTo(selectedIndex + 1);
+      }
+    }, AUTOPLAY_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, [api, selectedIndex, slidesCount, isAutoPlaying]);
+
+  // Pause auto-play saat user hover
+  const handleMouseEnter = () => {
+    setIsAutoPlaying(false);
+  };
+
+  // Resume auto-play saat user tidak hover
+  const handleMouseLeave = () => {
+    setIsAutoPlaying(true);
+  };
+
+  // Pause auto-play saat user manual navigation
+  const handleManualNavigation = (index) => {
+    setIsAutoPlaying(false);
+    api?.scrollTo(index);
+
+    // Resume auto-play setelah 5 detik
+    setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 5000);
+  };
 
   return (
     <section className="pt-36 pb-20 sm:pt-40 px-6 xl:px-16 bg-[url('/assets/background.png')] bg-cover">
@@ -36,14 +77,18 @@ const Hero = () => {
               Timeline
             </h1>
             <Carousel setApi={setApi} opts={{ loop: true }}>
-              <div className="relative cursor-pointer">
+              <div
+                className="relative cursor-pointer"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
                 <CarouselContent>
-                  {beritaUtama.map((berita) => (
-                    <CarouselItem key={berita.id}>
+                  {beritaUtama.map((beritaData) => (
+                    <CarouselItem key={beritaData.id}>
                       <div className="rounded-2xl relative w-full h-56 sm:h-[420px] bg-gray-200 overflow-hidden">
                         <img
-                          src={`${berita.cover}`}
-                          alt={`Slide ${berita.id}`}
+                          src={`${beritaData.cover}`}
+                          alt={`Slide ${beritaData.id}`}
                           className="w-full h-full object-cover"
                         />
 
@@ -53,11 +98,11 @@ const Hero = () => {
                         {/* Teks di atas gradient */}
                         <div className="absolute left-5 bottom-9 text-white">
                           <h2 className="sm:text-lg lg:text-base xl:text-lg">
-                            {getDay(berita.tanggal).day}{" "}
-                            {getDay(berita.tanggal).date}
+                            {getDay(beritaData.tanggal).day}{" "}
+                            {getDay(beritaData.tanggal).date}
                           </h2>
                           <h1 className="text-xs sm:text-sm md:text-lg lg:text-xl font-medium max-w-80 md:max-w-96">
-                            {berita.judul}
+                            {beritaData.judul}
                           </h1>
                         </div>
                       </div>
@@ -65,14 +110,30 @@ const Hero = () => {
                   ))}
                 </CarouselContent>
                 {/* Prev & Next */}
-                <CarouselPrevious className="absolute left-6 scale-150 sm:scale-250" />
-                <CarouselNext className="absolute right-3 scale-150 sm:scale-250" />
+                <CarouselPrevious
+                  className="absolute left-6 scale-150 sm:scale-250"
+                  onClick={() =>
+                    handleManualNavigation(
+                      selectedIndex - 1 < 0
+                        ? slidesCount - 1
+                        : selectedIndex - 1
+                    )
+                  }
+                />
+                <CarouselNext
+                  className="absolute right-3 scale-150 sm:scale-250"
+                  onClick={() =>
+                    handleManualNavigation(
+                      selectedIndex + 1 >= slidesCount ? 0 : selectedIndex + 1
+                    )
+                  }
+                />
                 {/* Dots */}
                 <div className="absolute right-5 bottom-3 flex justify-center mt-4 gap-2">
                   {Array.from({ length: slidesCount }).map((_, index) => (
                     <button
                       key={index}
-                      onClick={() => api?.scrollTo(index)}
+                      onClick={() => handleManualNavigation(index)}
                       className={`w-3 h-3 rounded-full transition-all ${
                         index === selectedIndex
                           ? "bg-yellow-400"
@@ -88,21 +149,14 @@ const Hero = () => {
         <div className="hidden lg:flex flex-col items-center w-full px-4 ">
           <h1 className="text-lg xl:text-2xl mb-4 font-medium">Timeline</h1>
           <div className="space-y-4 w-full">
-            <CarouselCard
-              berita={beritaUtama[0]}
-              api={api}
-              selectedIndex={selectedIndex}
-            />
-            <CarouselCard
-              berita={beritaUtama[1]}
-              api={api}
-              selectedIndex={selectedIndex}
-            />
-            <CarouselCard
-              berita={beritaUtama[2]}
-              api={api}
-              selectedIndex={selectedIndex}
-            />
+            {beritaUtama.map((beritaData) => (
+              <CarouselCard
+                key={beritaData.id}
+                berita={beritaData}
+                api={api}
+                selectedIndex={selectedIndex}
+              />
+            ))}
           </div>
         </div>
       </div>

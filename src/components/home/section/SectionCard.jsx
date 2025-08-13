@@ -1,6 +1,6 @@
 const SectionCard = ({ berita }) => {
   return (
-    <div className="flex gap-4 cursor-pointer">
+    <div className="flex gap-4 cursor-pointer p-3 rounded-2xl hover:bg-gray-100 transition-all duration-300">
       <div className="w-16 h-16 sm:w-24 sm:h-24  flex-shrink-0 rounded-xl overflow-hidden bg-gray-200">
         <img
           src={berita.cover}

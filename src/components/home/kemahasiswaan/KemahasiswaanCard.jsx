@@ -1,7 +1,9 @@
+
+
 const KemahasiswaanCard = ({ berita }) => {
   return (
-    <div className="flex gap-4 lg:flex-col cursor-pointer">
-      <div className="w-16 h-16 sm:w-24 lg:w-full lg:h-36 xl:h-48 sm:h-24 flex-shrink-0 rounded-xl overflow-hidden bg-gray-200">
+    <div className="flex gap-4 lg:flex-col cursor-pointer p-3 rounded-2xl hover:bg-gray-100 transition-all duration-300">
+      <div className="w-16 h-16 sm:w-24 lg:w-full lg:h-36 xl:h-48 sm:h-24 flex-shrink-0 rounded-xl overflow-hidden">
         <img
           src={berita.cover}
           alt="gambar"
