@@ -8,15 +8,38 @@ import {
 } from "@/components/ui/carousel";
 import { Berita as beritaLocalData, getDay } from "@/database/data";
 import CarouselCard from "./CarouselCard";
+import HeroSkeleton from "./HeroSkeleton";
+import { getBerita } from "@/service/api";
 
 const Hero = () => {
-  const beritaUtama = beritaLocalData
+  const beritaData = beritaLocalData
     .filter((beritaData) => beritaData.isPriority)
     .slice(0, 3);
+  const [beritaUtama, setBeritaUtama] = useState(beritaData);
+  const [loading, setLoading] = useState(false);
   const [api, setApi] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [slidesCount, setSlidesCount] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  useEffect(() => {
+    const fetchBerita = async () => {
+      try {
+        setLoading(true);
+        const data = await getBerita();
+        const beritaUtama = data.berita
+          .filter((beritaData) => !beritaData.isPriority)
+          .slice(0, 4);
+        setBeritaUtama(beritaUtama);
+      } catch (error) {
+        console.error(error, "Server is Offline, using local data");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBerita();
+  }, []);
 
   // Auto-play interval
   const AUTOPLAY_INTERVAL = 5000;
@@ -66,6 +89,8 @@ const Hero = () => {
       setIsAutoPlaying(true);
     }, 5000);
   };
+
+  if (loading || beritaUtama.length === 0) return <HeroSkeleton />;
 
   return (
     <section className="pt-36 pb-20 sm:pt-40 px-6 xl:px-16 bg-[url('/assets/background.png')] bg-cover">

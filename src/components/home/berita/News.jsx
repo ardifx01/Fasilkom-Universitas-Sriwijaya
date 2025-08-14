@@ -1,9 +1,34 @@
 import { Berita as beritaLocalData } from "@/database/data";
-
+import { getBerita } from "@/service/api";
+import { useEffect, useState } from "react";
+import NewsSkeleton from "./NewsSkeleton";
 const News = () => {
-  const beritaCommon = beritaLocalData
-    .filter((beritaData) => !beritaData.isPriority)
+  const beritaData = beritaLocalData
+    .filter((berita) => !berita.isPriority)
     .slice(0, 4);
+  const [beritaCommon, setBerita] = useState(beritaData);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchBerita = async () => {
+      try {
+        setLoading(true);
+        const data = await getBerita();
+        const beritaCommon = data.berita
+          .filter((beritaData) => !beritaData.isPriority)
+          .slice(0, 4);
+        setBerita(beritaCommon);
+      } catch (error) {
+        console.error(error, "Server is Offline, using local data");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBerita();
+  }, []);
+
+  if (loading || beritaCommon.length === 0) return <NewsSkeleton />;
 
   return (
     <section className="pt-6 pb-4 px-6 xl:px-16">

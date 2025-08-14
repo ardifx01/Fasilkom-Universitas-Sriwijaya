@@ -6,7 +6,7 @@ const Berita = [
     id: 1,
     judul:
       "Kunjungan Fakultas Ilmu Komputer Universitas Sriwijaya ke IPB University",
-    tanggal: "05-07-2025",
+    tanggal: "2025-07-05",
     cover: "/assets/Berita/berita-priority-1.png",
     content:
       "Fakultas Ilmu Komputer Universitas Sriwijaya (Fasilkom Unsri) melaksanakan kunjungan kerja ke IPB University dalam rangka studi banding dan penjajakan kerja sama strategis. Kegiatan ini difokuskan pada dua topik utama, yaitu Sistem Penjaminan Mutu Internal (SPMI) dan pengembangan unit usaha di PTNBH ",
@@ -17,7 +17,7 @@ const Berita = [
     id: 2,
     judul:
       "Fakultas Ilmu Komputer Universitas Sriwijaya kembali melepas alumni baru / Yudisium Ke-75.",
-    tanggal: "17-04-2025",
+    tanggal: "2025-04-17",
     cover: "/assets/Berita/berita-priority-2.jpg",
     content: "",
     isPriority: true,
@@ -26,7 +26,7 @@ const Berita = [
   {
     id: 3,
     judul: "Selamat Hari Raya Idul Fitri 1446 H",
-    tanggal: "31-03-2025",
+    tanggal: "2025-03-31",
     cover: "/assets/Berita/berita-priority-3.jpg",
     content: "",
     isPriority: true,
@@ -305,11 +305,26 @@ const ProgramStudi = [
 ];
 
 // Old
+// function getDay(dateStr) {
+//   const [day, month, year] = dateStr.split("-").map(Number);
+
+//   const dateObj = new Date(year, month - 1, day);
+
+//   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+//   return {
+//     day: days[dateObj.getDay()],
+//     date: String(day).padStart(2, "0"),
+//   };
+// }
+
+// getDay Function for MySQL Format YYYY-MM-DD
 function getDay(dateStr) {
-  const [day, month, year] = dateStr.split("-").map(Number);
+  const [year, month, day] = dateStr.split("-").map(Number);
 
   const dateObj = new Date(year, month - 1, day);
 
+  // Array untuk singkatan hari
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return {
@@ -318,13 +333,12 @@ function getDay(dateStr) {
   };
 }
 
-// getDay Function for MySQL
+// getDay Function for MySQL Format DateTime
 // function getDay(dateStr) {
-//   const [year, month, day] = dateStr.split("-").map(Number);
+//   const [year, month, day] = dateStr.split("T")[0].split("-").map(Number);
 
 //   const dateObj = new Date(year, month - 1, day);
 
-//   // Array untuk singkatan hari
 //   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 //   return {
