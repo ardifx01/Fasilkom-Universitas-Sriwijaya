@@ -3,7 +3,7 @@ import VisiMisiCard from "./VisiMisiCard";
 
 const VisiMisi = () => {
   return (
-    <section className="pt-6 pb-4 px-6 xl:px-16">
+    <section className="pt-6 pb-12 px-6 xl:px-16">
       {/* Tittle */}
       <div className="px-3">
         <h1 className="bg-[#FFCC00] py-2 px-3 xl:text-xl w-max">

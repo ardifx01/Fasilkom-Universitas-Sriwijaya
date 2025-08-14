@@ -13,7 +13,7 @@ const Tujuan = () => {
         </li>
         <li>
           Menghasilkan ilmu pengetahuan bidang informasi, komunikasi dan
-          teknologi yang unggul, tepat guna melalui penelitian Inovatif ;
+          teknologi yang unggul, tepat guna melalui penelitian Inovatif.
         </li>
         <li>
           Berperan serta dalam menyelesaikan permasalahan sosial dan pembangunan
