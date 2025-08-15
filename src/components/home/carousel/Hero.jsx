@@ -29,8 +29,7 @@ const Hero = () => {
         const data = await getBerita();
         const beritaUtama = data.berita
           .filter((beritaData) => beritaData.is_priority)
-          .slice(0, 3)
-          .reverse();
+          .slice(0, 3);
         setBeritaUtama(beritaUtama);
       } catch (error) {
         console.error(error, "Server is Offline, using local data");
