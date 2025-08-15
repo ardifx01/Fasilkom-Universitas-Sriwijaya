@@ -16,7 +16,7 @@ This project represents a complete overhaul of the Faculty of Computer Science w
 
 ## Project Team
 
-- **UI/UX Designer**: [Suheil Ichma Putra](https://github.com/MuhammadSuheil)
+- **UI/UX Designer**: [M. Suheil Ichma Putra](https://github.com/MuhammadSuheil)
 - **Frontend Developer**: [M. Rabyndra Janitra Binello](https://github.com/ElloRabyndra)
 - **Backend Developer**: [Dian Kharisma Ramadhan](https://github.com/RenaiRS)
 
@@ -149,7 +149,7 @@ This project features a smart dual-mode system: **Online Mode** fetches real-tim
 ## Related Repositories
 
 - **Backend Repository**: [Fasilkom-Backend](https://github.com/RenaiRS/Fasilkom-Backend)
-- **UI/UX Design**: [Figma](https://www.figma.com/design/qTUn3R1plLQAQ8hyUpVufC/Redisign-Challenge-Team-4?node-id=0-1&t=R4buHEZu1VvZWiiO-1)
+- **UI/UX Design**: [Figma Link](https://www.figma.com/design/qTUn3R1plLQAQ8hyUpVufC/Redisign-Challenge-Team-4?node-id=0-1&t=R4buHEZu1VvZWiiO-1)
 
 ---
 
