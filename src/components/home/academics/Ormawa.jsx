@@ -16,7 +16,7 @@ const Ormawa = () => {
         <div className="grid grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
           {OrmawaLogo.map((logo) => (
             <div
-              key={logo.id}
+              key={logo.ID}
               className="flex flex-col justify-center items-center cursor-pointer"
             >
               {/* Logo */}

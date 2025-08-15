@@ -1,9 +1,34 @@
 import { Berita as beritaLocalData } from "@/database/data";
-
+import { getBerita } from "@/service/api";
+import { useEffect, useState } from "react";
+import NewsSkeleton from "./NewsSkeleton";
 const News = () => {
-  const beritaCommon = beritaLocalData
-    .filter((beritaData) => !beritaData.isPriority)
+  const beritaData = beritaLocalData
+    .filter((berita) => !berita.is_priority)
     .slice(0, 4);
+  const [beritaCommon, setBerita] = useState(beritaData);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchBerita = async () => {
+      try {
+        setLoading(true);
+        const data = await getBerita();
+        const beritaCommon = data.berita
+          .filter((beritaData) => !beritaData.is_priority)
+          .slice(0, 4);
+        setBerita(beritaCommon);
+      } catch (error) {
+        console.error(error, "Server is Offline, using local data");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBerita();
+  }, []);
+
+  if (loading || beritaCommon.length === 0) return <NewsSkeleton />;
 
   return (
     <section className="pt-6 pb-4 px-6 xl:px-16">
@@ -20,7 +45,7 @@ const News = () => {
           <div className="rounded-3xl overflow-hidden h-40 sm:h-56 md:h-72 lg:h-80">
             <img
               className="w-full h-full object-cover"
-              src={beritaCommon[0].cover}
+              src={`${beritaCommon[0].cover}`}
               alt={beritaCommon[0].judul}
             />
           </div>
@@ -31,7 +56,7 @@ const News = () => {
             {beritaCommon[0].content}
           </p>
           <p className="text-xs md:text-sm md:text-right text-gray-500">
-            Posted by admin web in {beritaCommon[0].postedBy}
+            Posted by admin web in {beritaCommon[0].posted_by}
           </p>
         </div>
 
@@ -40,7 +65,7 @@ const News = () => {
           <div className="lg:order-1 rounded-3xl overflow-hidden h-40 sm:h-56 md:h-48">
             <img
               className="w-full h-full object-cover"
-              src={beritaCommon[1].cover}
+              src={`${beritaCommon[1].cover}`}
               alt={beritaCommon[1].judul}
             />
           </div>
@@ -54,7 +79,7 @@ const News = () => {
               {beritaCommon[1].content}
             </p>
             <p className="text-xs lg:text-right text-gray-500 mt-3">
-              Posted by admin web in {beritaCommon[1].postedBy}
+              Posted by admin web in {beritaCommon[1].posted_by}
             </p>
           </div>
         </div>
@@ -67,7 +92,7 @@ const News = () => {
             </h3>
             <p className="text-sm line-clamp-4">{beritaCommon[2].content}</p>
             <p className="text-xs lg:text-right text-gray-500">
-              Posted by admin web in {beritaCommon[2].postedBy}
+              Posted by admin web in {beritaCommon[2].posted_by}
             </p>
           </div>
           <div className="space-y-3 p-3 rounded-2xl hover:bg-gray-100 transition-all duration-300">
@@ -76,7 +101,7 @@ const News = () => {
             </h3>
             <p className="text-sm line-clamp-4">{beritaCommon[3].content}</p>
             <p className="text-xs lg:text-right text-gray-500">
-              Posted by admin web in {beritaCommon[3].postedBy}
+              Posted by admin web in {beritaCommon[3].posted_by}
             </p>
           </div>
         </div>

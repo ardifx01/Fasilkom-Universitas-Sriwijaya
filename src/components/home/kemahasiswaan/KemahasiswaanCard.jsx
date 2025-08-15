@@ -1,5 +1,3 @@
-
-
 const KemahasiswaanCard = ({ berita }) => {
   return (
     <div className="flex gap-4 lg:flex-col cursor-pointer p-3 rounded-2xl hover:bg-gray-100 transition-all duration-300">
@@ -12,7 +10,9 @@ const KemahasiswaanCard = ({ berita }) => {
       </div>
       <div className="space-y-2 flex-1">
         <h2 className="text-sm sm:text-base line-clamp-2">{berita.judul}</h2>
-        <p className="text-xs sm:text-sm text-gray-500">Posted by {berita.postedBy}</p>
+        <p className="text-xs sm:text-sm text-gray-500">
+          Posted by {berita.posted_by}
+        </p>
       </div>
     </div>
   );
