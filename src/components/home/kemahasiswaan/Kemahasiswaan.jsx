@@ -14,7 +14,7 @@ const Kemahasiswaan = () => {
       try {
         setLoading(true);
         const data = await getKemahasiswaanKerjasama();
-        setKemahasiswaanKerjasama(data.Kemahasiswaan);
+        setKemahasiswaanKerjasama(data.data);
       } catch (error) {
         console.error(error, "Server is Offline, using local data");
       } finally {
@@ -43,7 +43,7 @@ const Kemahasiswaan = () => {
         {/* Content */}
         <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {KemahasiswaanKerjasama.map((berita) => (
-            <KemahasiswaanCard berita={berita} key={berita.id} />
+            <KemahasiswaanCard berita={berita} key={berita.ID} />
           ))}
         </div>
       </div>

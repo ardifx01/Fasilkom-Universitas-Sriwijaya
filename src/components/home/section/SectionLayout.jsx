@@ -21,8 +21,8 @@ const SectionLayout = () => {
           getVacancies(),
           getScholarship(),
         ]);
-        setVacancies(vacanciesRespone.vacancies);
-        setScholarship(scholarshipRespone.scholarship);
+        setVacancies(vacanciesRespone.data);
+        setScholarship(scholarshipRespone.data);
       } catch (error) {
         console.error(error, "Server is Offline, using local data");
       } finally {

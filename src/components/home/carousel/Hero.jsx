@@ -13,7 +13,7 @@ import { getBerita } from "@/service/api";
 
 const Hero = () => {
   const beritaData = beritaLocalData
-    .filter((beritaData) => beritaData.isPriority)
+    .filter((beritaData) => beritaData.is_priority)
     .slice(0, 3);
   const [beritaUtama, setBeritaUtama] = useState(beritaData);
   const [loading, setLoading] = useState(false);
@@ -28,8 +28,9 @@ const Hero = () => {
         setLoading(true);
         const data = await getBerita();
         const beritaUtama = data.berita
-          .filter((beritaData) => !beritaData.isPriority)
-          .slice(0, 4);
+          .filter((beritaData) => beritaData.is_priority)
+          .slice(0, 3)
+          .reverse();
         setBeritaUtama(beritaUtama);
       } catch (error) {
         console.error(error, "Server is Offline, using local data");
@@ -109,11 +110,11 @@ const Hero = () => {
               >
                 <CarouselContent>
                   {beritaUtama.map((beritaData) => (
-                    <CarouselItem key={beritaData.id}>
+                    <CarouselItem key={beritaData.ID}>
                       <div className="rounded-2xl relative w-full h-56 sm:h-[420px] bg-gray-200 overflow-hidden">
                         <img
                           src={`${beritaData.cover}`}
-                          alt={`Slide ${beritaData.id}`}
+                          alt={`Slide ${beritaData.ID}`}
                           className="w-full h-full object-cover"
                         />
 
@@ -155,9 +156,9 @@ const Hero = () => {
                 />
                 {/* Dots */}
                 <div className="absolute right-5 bottom-3 flex justify-center mt-4 gap-2">
-                  {Array.from({ length: slidesCount }).map((_, index) => (
+                  {beritaUtama.map((beritaData, index) => (
                     <button
-                      key={index}
+                      key={beritaData.ID}
                       onClick={() => handleManualNavigation(index)}
                       className={`w-3 h-3 rounded-full transition-all ${
                         index === selectedIndex
@@ -174,12 +175,13 @@ const Hero = () => {
         <div className="hidden lg:flex flex-col items-center w-full px-4 ">
           <h1 className="text-lg xl:text-2xl mb-4 font-medium">Timeline</h1>
           <div className="space-y-4 w-full">
-            {beritaUtama.map((beritaData) => (
+            {beritaUtama.map((beritaData, index) => (
               <CarouselCard
-                key={beritaData.id}
+                key={beritaData.ID}
                 berita={beritaData}
                 api={api}
                 selectedIndex={selectedIndex}
+                index={index} // Tambahkan baris ini
               />
             ))}
           </div>

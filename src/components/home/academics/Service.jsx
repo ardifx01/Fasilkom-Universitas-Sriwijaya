@@ -16,7 +16,7 @@ const Service = () => {
       {/* Content */}
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1  gap-6">
         {AcademicService.map((berita) => (
-          <ServiceCard berita={berita} key={berita.id} />
+          <ServiceCard berita={berita} key={berita.ID} />
         ))}
       </div>
     </section>

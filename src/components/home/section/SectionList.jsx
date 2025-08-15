@@ -14,7 +14,7 @@ const SectionList = ({ tittle, berita }) => {
         {/* Content */}
         <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
           {berita.map((berita) => (
-            <SectionCard berita={berita} key={berita.id} />
+            <SectionCard berita={berita} key={berita.ID} />
           ))}
         </div>
       </div>

@@ -11,7 +11,7 @@ const SectionCard = ({ berita }) => {
       <div className="space-y-2 flex-1">
         <h2 className="text-sm sm:text-base line-clamp-2">{berita.judul}</h2>
         <p className="text-xs sm:text-sm text-gray-500">
-          Posted by {berita.postedBy}
+          Posted by {berita.posted_by}
         </p>
       </div>
     </div>
