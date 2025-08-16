@@ -56,7 +56,7 @@ const DekanMessage = () => {
       {!isLargeScreen && (
         <button
           onClick={toggleExpand}
-          className="flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-sm hover:shadow-md transition-shadow duration-200 absolute top-3 right-3"
+          className="flex items-center justify-center w-8 h-8 rounded-full bg-white  transition-shadow duration-200 absolute top-3 right-3"
           aria-label={isExpanded ? "Tutup pesan" : "Lihat pesan lengkap"}
         >
           {isExpanded ? (

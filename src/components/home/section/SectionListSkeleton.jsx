@@ -47,7 +47,7 @@ const MoreAboutSkeleton = () => (
       </div>
       {/* Content */}
       <div className="grid grid-cols-1 px-3 -mt-2">
-        {Array.from({ length: 5 }).map((_, i) => (
+        {Array.from({ length: 9 }).map((_, i) => (
           <MoreAboutCardSkeleton key={i} />
         ))}
       </div>

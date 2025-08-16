@@ -1,9 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Hero from "@/components/profil/Hero";
-import Dekan from "@/components/profil/Dekan";
-import VisiMisi from "@/components/profil/VisiMisi";
-import Prodi from "@/components/profil/Prodi";
+import Hero from "@/components/profil/hero/Hero";
+import Dekan from "@/components/profil/dekan/Dekan";
+import VisiMisi from "@/components/profil/visiMisi/VisiMisi";
+import Prodi from "@/components/profil/prodi/Prodi";
 
 const Profile = () => {
   return (

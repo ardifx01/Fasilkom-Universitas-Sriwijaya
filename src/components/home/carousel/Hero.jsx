@@ -93,7 +93,7 @@ const Hero = () => {
   if (loading || beritaUtama.length === 0) return <HeroSkeleton />;
 
   return (
-    <section className="pt-36 pb-20 sm:pt-40 px-6 xl:px-16 bg-[url('/assets/background.png')] bg-cover">
+    <section className="pt-5 pb-10 xl:pb-20 sm:pt-10 lg:pt-16 px-6 xl:px-16 bg-[url('/assets/background.png')] bg-cover">
       <div className="lg:grid grid-cols-2 justify-between flex-wrap lg:gap-8">
         {/* Carousel */}
         <div>

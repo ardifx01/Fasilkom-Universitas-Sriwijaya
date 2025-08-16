@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className="relative mt-32 md:mt-20 h-44 sm:h-56 lg:h-72 xl:h-80 bg-[url('/assets/fasilkom-mobile.png')] md:bg-[url('/assets/fasilkom.png')] bg-cover">
+    <section className="relative mt-3 md:mt-0 h-44 sm:h-56 lg:h-72 xl:h-80 bg-[url('/assets/fasilkom-mobile.png')] md:bg-[url('/assets/fasilkom.png')] bg-cover">
       <div className="absolute inset-0 z-20 text-white flex flex-col justify-end items-center pb-6">
         <div className="w-32 sm:w-40 md:w-44 lg:w-52 xl:w-64 mb-2">
           <img

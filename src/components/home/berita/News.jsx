@@ -31,7 +31,7 @@ const News = () => {
   if (loading || beritaCommon.length === 0) return <NewsSkeleton />;
 
   return (
-    <section className="pt-6 pb-4 px-6 xl:px-16">
+    <section className="pt-6 xl:pt-12 pb-4 px-6 xl:px-16">
       {/* Tittle */}
       <div className="flex justify-between px-3">
         <h2>News & Information</h2>

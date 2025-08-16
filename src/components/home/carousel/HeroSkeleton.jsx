@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const HeroSkeleton = () => {
   return (
-    <section className="pt-36 pb-20 sm:pt-40 px-6 xl:px-16">
+    <section className="pt-8 pb-10 xl:pb-20 sm:pt-10 lg:pt-16 px-6 xl:px-16">
       <div className="lg:grid grid-cols-2 justify-between flex-wrap lg:gap-8">
         {/* Carousel Skeleton */}
         <div>
