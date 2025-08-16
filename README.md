@@ -21,12 +21,30 @@ This project represents a complete overhaul of the Faculty of Computer Science w
 - **Backend Developer**: [Dian Kharisma Ramadhan](https://github.com/RenaiRS)
 
 ---
+## Related Repositories
+
+- **Backend Repository**: [Fasilkom-Backend](https://github.com/RenaiRS/Fasilkom-Backend)
+- **UI/UX Design**: [Figma](https://www.figma.com/design/qTUn3R1plLQAQ8hyUpVufC/Redisign-Challenge-Team-4?node-id=0-1&t=f5HVqCR3t8YK2hJu-1)
+
+---
 
 ## Tech Stack
 
 **Frontend:** React, Vite, Tailwind CSS, Shadcn/UI, Lucide React, React Router, React Toastify
 
 **Backend:** Go, Fiber, GORM, MySQL, JWT, Bcrypt
+
+---
+
+## Features
+
+- **Responsive Design**
+- **News & Information Management**
+- **Student Services**
+- **Organization Directory**
+- **Academic Services**
+- **Profile Pages**
+- **Toast Notifications**
 
 ---
 
@@ -96,19 +114,6 @@ This project features a smart dual-mode system: **Online Mode** fetches real-tim
 
 ---
 
-## Features
-
-- **Responsive Design**
-- **News & Information Management**
-- **Student Services**
-- **Organization Directory**
-- **Academic Services**
-- **Profile Pages**
-- **Search Functionality**
-- **Toast Notifications**
-
----
-
 ## API Endpoints
 
 ### Public Endpoints
@@ -143,13 +148,6 @@ This project features a smart dual-mode system: **Online Mode** fetches real-tim
 ├── public/                 # Static assets
 └── README.md
 ```
-
----
-
-## Related Repositories
-
-- **Backend Repository**: [Fasilkom-Backend](https://github.com/RenaiRS/Fasilkom-Backend)
-- **UI/UX Design**: [Figma Link](https://www.figma.com/design/qTUn3R1plLQAQ8hyUpVufC/Redisign-Challenge-Team-4?node-id=0-1&t=R4buHEZu1VvZWiiO-1)
 
 ---
 
