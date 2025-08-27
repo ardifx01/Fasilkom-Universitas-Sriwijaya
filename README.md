@@ -24,7 +24,7 @@ This project represents a complete overhaul of the Faculty of Computer Science w
 ## Related Repositories
 
 - **Backend Repository**: [Fasilkom-Backend](https://github.com/RenaiRS/Fasilkom-Backend)
-- **UI/UX Design**: [Figma](https://www.figma.com/design/qTUn3R1plLQAQ8hyUpVufC/Redisign-Challenge-Team-4?node-id=0-1&t=f5HVqCR3t8YK2hJu-1)
+- **UI/UX Design**: [Figma Projct](https://www.figma.com/design/qTUn3R1plLQAQ8hyUpVufC/Redisign-Challenge-Team-4?node-id=0-1&t=f5HVqCR3t8YK2hJu-1)
 
 ---
 
@@ -153,6 +153,6 @@ This project features a smart dual-mode system: **Online Mode** fetches real-tim
 
 ## License
 
-This project is developed for the Faculty of Computer Science, Universitas Sriwijaya as part of a collaborative redesign initiative.
+This project is developed for the Faculty of Computer Science, Universitas Sriwijaya as part of a collaborative redesign.
 
 ---
